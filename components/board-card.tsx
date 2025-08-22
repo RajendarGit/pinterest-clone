@@ -21,7 +21,7 @@ export function BoardCard({ board }: BoardCardProps) {
 
   return (
     <>
-      <Card className="group cursor-pointer overflow-hidden bg-card hover:shadow-lg transition-all duration-200 border-border">
+      <Card className="group cursor-pointer overflow-hidden hover:shadow-lg transition-all duration-200 card-theme">
         <Link href={`/boards/${board.id}`}>
           <div className="relative aspect-[4/3] overflow-hidden">
             <Image
@@ -59,8 +59,9 @@ export function BoardCard({ board }: BoardCardProps) {
                       e.preventDefault()
                       setShowEditModal(true)
                     }}
+                    className="focus:text-primary-foreground"
                   >
-                    <Edit className="w-4 h-4 mr-2" />
+                    <Edit className="w-4 h-4 mr-2 focus:text-primary-foreground" />
                     Edit board
                   </DropdownMenuItem>
                   <DropdownMenuItem
@@ -68,9 +69,9 @@ export function BoardCard({ board }: BoardCardProps) {
                       e.preventDefault()
                       setShowDeleteModal(true)
                     }}
-                    className="text-destructive focus:text-destructive"
+                    className="text-destructive focus:text-primary-foreground"
                   >
-                    <Trash2 className="w-4 h-4 mr-2" />
+                    <Trash2 className="w-4 h-4 mr-2 focus:text-primary-foreground" />
                     Delete board
                   </DropdownMenuItem>
                 </DropdownMenuContent>

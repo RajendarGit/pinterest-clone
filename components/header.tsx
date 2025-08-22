@@ -6,6 +6,7 @@ import { Search, Bell, MessageCircle, User } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { useAppSelector } from "@/lib/hooks/redux"
+import Image from "next/image"
 
 export function Header() {
   const [searchQuery, setSearchQuery] = useState("")
@@ -17,10 +18,11 @@ export function Header() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
+          <Image src="/logo.png" alt="PinClone" width={100} height={40} />
+            {/* <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
               <span className="text-primary-foreground font-bold text-lg">P</span>
-            </div>
-            <span className="font-bold text-xl text-foreground">PinClone</span>
+            </div> */}
+            {/* <span className="font-bold text-xl text-primary">PinClone</span> */}
           </Link>
 
           {/* Navigation */}

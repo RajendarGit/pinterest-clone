@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button"
 import { useAppDispatch, useAppSelector } from "@/lib/hooks/redux"
 import { setBoards } from "@/lib/store/slices/boardsSlice"
 import type { Board } from "@/lib/store/slices/boardsSlice"
+import Loading from "./loading"
 
 export default function BoardsPage() {
   const dispatch = useAppDispatch()
@@ -84,12 +85,7 @@ export default function BoardsPage() {
         </div>
 
         {loading ? (
-          <div className="flex justify-center items-center py-20">
-            <div className="flex items-center space-x-2 text-muted-foreground">
-              <div className="w-6 h-6 border-2 border-primary border-t-transparent rounded-full animate-spin" />
-              <span>Loading your boards...</span>
-            </div>
-          </div>
+          <Loading />
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {boards.map((board) => (

@@ -90,7 +90,7 @@ export function PinOptionsModal({ pin, open, onOpenChange }: PinOptionsModalProp
 
             <Button
               variant="ghost"
-              className="w-full justify-start text-destructive hover:text-destructive"
+              className="w-full justify-start text-destructive hover:text-primary-foreground"
               onClick={handleDelete}
             >
               <Trash2 className="w-4 h-4 mr-3" />

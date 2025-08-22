@@ -84,7 +84,7 @@ export default function CreatePage() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Image Upload/URL Section */}
-          <Card>
+          <Card className="card-theme">
             <CardHeader>
               <CardTitle>Add Image</CardTitle>
             </CardHeader>
@@ -149,7 +149,7 @@ export default function CreatePage() {
           </Card>
 
           {/* Pin Details Section */}
-          <Card>
+          <Card className="card-theme">
             <CardHeader>
               <CardTitle>Pin Details</CardTitle>
             </CardHeader>

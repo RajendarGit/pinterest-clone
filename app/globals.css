@@ -16,7 +16,7 @@
   --secondary-foreground: oklch(1 0 0); /* #ffffff - Text on secondary */
   --muted: oklch(0.97 0 0); /* #f1f5f9 - Muted background */
   --muted-foreground: oklch(0.556 0 0); /* #475569 - Muted text */
-  --accent: oklch(0.7 0.18 160.116); /* #10b981 - Accent elements */
+  --accent: oklch(45.939% 0.18852 29.223); /* #10b981 - Accent elements */
   --accent-foreground: oklch(1 0 0); /* #ffffff - Text on accent */
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.577 0.245 27.325);
@@ -120,4 +120,8 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.card-theme {
+  @apply bg-transparent shadow-2xl border-0;
 }

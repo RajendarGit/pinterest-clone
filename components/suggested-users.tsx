@@ -31,7 +31,7 @@ export function SuggestedUsers() {
   }
 
   return (
-    <Card className="border-border">
+    <Card className="card-theme">
       <CardHeader>
         <CardTitle className="text-lg">Suggested for you</CardTitle>
       </CardHeader>

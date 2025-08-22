@@ -4,7 +4,7 @@ import type React from "react"
 
 import { useState } from "react"
 import Image from "next/image"
-import { Heart, Share, MoreHorizontal } from "lucide-react"
+import { Heart, Share, MoreHorizontal, Pin as PinIcon } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { SavePinModal } from "./save-pin-modal"
@@ -78,7 +78,7 @@ export function PinCard({ pin }: PinCardProps) {
                   className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-4"
                   onClick={handleSave}
                 >
-                  Save
+                  <PinIcon className="w-4 h-4" />
                 </Button>
               </div>
 

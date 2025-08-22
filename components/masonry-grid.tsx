@@ -3,6 +3,8 @@
 import { useEffect, useRef, useState, useCallback } from "react"
 import { PinCard } from "./pin-card"
 import type { Pin } from "@/lib/store/slices/pinsSlice"
+import Loading from "./loading"
+import ReachedTheEnd from "./reached-the-end"
 
 interface MasonryGridProps {
   pins: Pin[]
@@ -133,12 +135,9 @@ export function MasonryGrid({ pins, onLoadMore, hasMore, loading }: MasonryGridP
       {/* Infinite scroll trigger */}
       <div ref={loadMoreRef} className="flex justify-center py-8">
         {loading && (
-          <div className="flex items-center space-x-2 text-muted-foreground">
-            <div className="w-4 h-4 border-2 border-primary border-t-transparent rounded-full animate-spin" />
-            <span>Loading more pins...</span>
-          </div>
+          <Loading />
         )}
-        {!hasMore && pins.length > 0 && <p className="text-muted-foreground">You've reached the end!</p>}
+        {!hasMore && pins.length > 0 && <ReachedTheEnd />}
       </div>
     </div>
   )
