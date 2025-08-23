@@ -113,7 +113,10 @@ export function MasonryGrid({ pins, onLoadMore, hasMore, loading }: MasonryGridP
       <div
         className="relative mx-auto"
         style={{
-          width: Math.min(containerWidth - PADDING * 2, columnCount * (COLUMN_WIDTH + GAP) - GAP),
+          width: Math.min(
+            containerWidth - PADDING * 2,
+            columnCount * (COLUMN_WIDTH + GAP) - GAP
+          ),
           height: totalHeight,
         }}
       >
@@ -134,11 +137,9 @@ export function MasonryGrid({ pins, onLoadMore, hasMore, loading }: MasonryGridP
 
       {/* Infinite scroll trigger */}
       <div ref={loadMoreRef} className="flex justify-center py-8">
-        {loading && (
-          <Loading />
-        )}
+        {loading && <Loading />}
         {!hasMore && pins.length > 0 && <ReachedTheEnd />}
       </div>
     </div>
-  )
+  );
 }

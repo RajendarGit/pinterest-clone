@@ -8,16 +8,16 @@ interface PinInfoProps {
 
 const PinInfo: React.FC<PinInfoProps> = ({ pin }) => {
   return (
-    <div className="px-4 py-6">
+    <div className="p-4">
       {pin.title && (
-        <h3 className="font-medium text-sm text-foreground line-clamp-2 mb-2">
+        <h3 className="font-medium text-sm text-foreground line-clamp-2 mb-4">
           {pin.title}
         </h3>
       )}
 
       {pin.user && (
         <div className="flex items-center space-x-2">
-          <div className="w-6 h-6 rounded-full bg-muted overflow-hidden">
+          <div className="w-8 h-8 rounded-full bg-muted overflow-hidden">
             {pin.user.avatar_url ? (
               <Image
                 src={pin.user.avatar_url || "/placeholder.svg"}
@@ -36,7 +36,7 @@ const PinInfo: React.FC<PinInfoProps> = ({ pin }) => {
               </div>
             )}
           </div>
-          <span className="text-xs text-muted-foreground truncate">
+          <span className="text-sm text-muted-foreground truncate">
             {pin.user.display_name || pin.user.username}
           </span>
         </div>
