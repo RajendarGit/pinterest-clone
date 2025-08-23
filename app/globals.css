@@ -123,5 +123,5 @@
 }
 
 .card-theme {
-  @apply bg-transparent shadow-2xl border-0;
+  @apply bg-transparent shadow-2xl border-0 hover:shadow-lg transition-all duration-200;
 }

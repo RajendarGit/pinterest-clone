@@ -38,7 +38,7 @@ export function UserCard({ user }: UserCardProps) {
   }
 
   return (
-    <Card className="card-theme  hover:shadow-lg transition-shadow">
+    <Card className="card-theme">
       <CardContent className="p-6 text-center">
         <Link href={`/user/${user.username}`}>
           <div className="w-20 h-20 rounded-full bg-muted overflow-hidden mx-auto mb-4">

@@ -61,7 +61,7 @@ export function ActivityFeed({ activities }: ActivityFeedProps) {
   return (
     <div className="space-y-6">
       {activities.map((activity) => (
-        <Card key={activity.id} className="bg-transparent shadow-2xl border-0">
+        <Card key={activity.id} className="card-theme">
           <CardContent className="p-6">
             <div className="flex items-start space-x-4">
               {/* User avatar */}

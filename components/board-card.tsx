@@ -21,7 +21,7 @@ export function BoardCard({ board }: BoardCardProps) {
 
   return (
     <>
-      <Card className="group cursor-pointer overflow-hidden hover:shadow-lg transition-all duration-200 card-theme">
+      <Card className="group cursor-pointer overflow-hidden card-theme p-0">
         <Link href={`/boards/${board.id}`}>
           <div className="relative aspect-[4/3] overflow-hidden">
             <Image
