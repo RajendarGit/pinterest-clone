@@ -12,7 +12,7 @@ const LikeButton = () => {
     <Button
       size="sm"
       variant="secondary"
-      className="rounded-full p-2 bg-white/90 hover:bg-white"
+      className="function-buttons"
       onClick={handleLike}
     >
       <Heart

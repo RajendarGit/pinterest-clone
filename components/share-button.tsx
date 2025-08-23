@@ -18,7 +18,7 @@ const ShareButton = ({ pin }: { pin: Pin }) => {
     <Button
       size="sm"
       variant="secondary"
-      className="rounded-full p-2 bg-white/90 hover:bg-white"
+      className="function-buttons"
       onClick={handleShare}
     >
       <Share className="w-4 h-4 text-gray-700" />

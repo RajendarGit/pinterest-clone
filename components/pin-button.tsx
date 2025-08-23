@@ -10,10 +10,10 @@ const PinButton = ({ handleSave }: PinButtonProps) => {
   return (
     <Button
       size="sm"
-      className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-4"
+      className="function-buttons"
       onClick={handleSave}
     >
-      <PinIcon className="w-4 h-4" />
+      <PinIcon className="w-4 h-4 text-gray-700" />
     </Button>
   );
 };

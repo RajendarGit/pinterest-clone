@@ -11,7 +11,7 @@ const OptionButton = ({ handleOptions }: ShareButtonProps) => {
     <Button
       size="sm"
       variant="secondary"
-      className="rounded-full p-2 bg-white/90 hover:bg-white"
+      className="function-buttons"
       onClick={handleOptions}
     >
       <MoreHorizontal className="w-4 h-4 text-gray-700" />

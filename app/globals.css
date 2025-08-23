@@ -125,3 +125,7 @@
 .card-theme {
   @apply bg-white dark:bg-gray-800 shadow-2xl border-0 hover:shadow-lg transition-all duration-200;
 }
+
+.function-buttons {
+  @apply rounded-full p-2 bg-white/50 hover:bg-white w-10 h-10;
+}
