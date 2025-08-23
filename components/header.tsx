@@ -1,15 +1,14 @@
+// components/header.tsx
 "use client"
 
-import { useState } from "react"
 import Link from "next/link"
-import { Search, Bell, MessageCircle, User } from "lucide-react"
+import { Bell, MessageCircle, User } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
 import { useAppSelector } from "@/lib/hooks/redux"
 import Image from "next/image"
+import SearchBar from "./search-bar"
 
-export function Header() {
-  const [searchQuery, setSearchQuery] = useState("")
+export function Header({ onSearch }: { onSearch: (query: string) => void }) {
   const { user } = useAppSelector((state) => state.auth)
 
   return (
@@ -18,44 +17,21 @@ export function Header() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-          <Image src="/logo.png" alt="PinClone" width={100} height={40} />
-            {/* <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-lg">P</span>
-            </div> */}
-            {/* <span className="font-bold text-xl text-primary">PinClone</span> */}
+            <Image src="/logo.png" alt="PinClone" width={100} height={40} />
           </Link>
 
           {/* Navigation */}
           <nav className="hidden md:flex items-center space-x-8 ml-8">
-            <Link href="/" className="text-foreground hover:text-primary font-medium">
-              Home
-            </Link>
-            <Link href="/following" className="text-muted-foreground hover:text-primary font-medium">
-              Following
-            </Link>
-            <Link href="/people" className="text-muted-foreground hover:text-primary font-medium">
-              People
-            </Link>
-            <Link href="/create" className="text-muted-foreground hover:text-primary font-medium">
-              Create
-            </Link>
-            <Link href="/boards" className="text-muted-foreground hover:text-primary font-medium">
-              Boards
-            </Link>
+            <Link href="/" className="text-foreground hover:text-primary font-medium">Home</Link>
+            <Link href="/following" className="text-muted-foreground hover:text-primary font-medium">Following</Link>
+            <Link href="/people" className="text-muted-foreground hover:text-primary font-medium">People</Link>
+            <Link href="/create" className="text-muted-foreground hover:text-primary font-medium">Create</Link>
+            <Link href="/boards" className="text-muted-foreground hover:text-primary font-medium">Boards</Link>
           </nav>
 
           {/* Search */}
           <div className="flex-1 max-w-2xl mx-8">
-            <div className="relative">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
-              <Input
-                type="text"
-                placeholder="Search for ideas"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="pl-10 bg-muted border-0 focus:ring-2 focus:ring-primary"
-              />
-            </div>
+            <SearchBar onSearch={onSearch} /> {/* 🔥 Forward search */}
           </div>
 
           {/* Actions */}
