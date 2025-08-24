@@ -1,10 +1,8 @@
 "use client";
-
 import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import { ArrowLeft, Plus, MoreHorizontal, Lock, Users } from "lucide-react";
 import Link from "next/link";
-import { Header } from "@/components/header";
 import { MasonryGrid } from "@/components/masonry-grid";
 import { Button } from "@/components/ui/button";
 import { useAppSelector } from "@/lib/hooks/redux";
