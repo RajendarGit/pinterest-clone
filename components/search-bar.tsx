@@ -12,7 +12,7 @@ const SearchBar = ({ onSearch }: { onSearch: (query: string) => void }) => {
   };
 
   return (
-    <div className="relative">
+    <div className="relative mb-8 lg:w-2/3 mx-auto">
       <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
       <Input
         type="text"

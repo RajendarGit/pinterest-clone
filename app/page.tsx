@@ -1,10 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Header } from "@/components/header";
 import { MasonryGrid } from "@/components/masonry-grid";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks/redux";
 import { fetchPins } from "@/lib/store/slices/pinsSlice";
+import SearchBar from "@/components/search-bar";
 
 export default function HomePage() {
   const dispatch = useAppDispatch();
@@ -35,7 +35,7 @@ export default function HomePage() {
 
   return (
     <>
-      <Header onSearch={setQuery} />
+      <SearchBar onSearch={setQuery} />
       {filteredPins.length === 0 && loading ? (
         <div className="flex justify-center items-center py-20">
           <div className="flex items-center space-x-2 text-muted-foreground">

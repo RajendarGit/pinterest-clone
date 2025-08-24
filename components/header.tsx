@@ -1,4 +1,3 @@
-// components/header.tsx
 "use client"
 
 import Link from "next/link"
@@ -6,9 +5,8 @@ import { Bell, MessageCircle, User } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useAppSelector } from "@/lib/hooks/redux"
 import Image from "next/image"
-import SearchBar from "./search-bar"
 
-export function Header({ onSearch }: { onSearch: (query: string) => void }) {
+export function Header() {
   const { user } = useAppSelector((state) => state.auth)
 
   return (
@@ -28,11 +26,6 @@ export function Header({ onSearch }: { onSearch: (query: string) => void }) {
             <Link href="/create" className="text-muted-foreground hover:text-primary font-medium">Create</Link>
             <Link href="/boards" className="text-muted-foreground hover:text-primary font-medium">Boards</Link>
           </nav>
-
-          {/* Search */}
-          <div className="flex-1 max-w-2xl mx-8">
-            <SearchBar onSearch={onSearch} /> {/* 🔥 Forward search */}
-          </div>
 
           {/* Actions */}
           <div className="flex items-center space-x-2">
