@@ -8,8 +8,9 @@ import { Button } from "@/components/ui/button";
 import { useAppSelector } from "@/lib/hooks/redux";
 import type { Board } from "@/lib/store/slices/boardsSlice";
 import type { Pin } from "@/lib/store/slices/pinsSlice";
+import { withAuth } from "@/components/hoc";
 
-export default function BoardDetailPage() {
+function BoardDetailPage() {
   const params = useParams();
   const boardId = params.id as string;
   const { boards } = useAppSelector((state) => state.boards);
@@ -168,3 +169,5 @@ export default function BoardDetailPage() {
     </>
   );
 }
+
+export default withAuth(BoardDetailPage);

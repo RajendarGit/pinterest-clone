@@ -7,8 +7,9 @@ import { UserCard } from "@/components/user-card";
 import { Input } from "@/components/ui/input";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks/redux";
 import { fetchSuggestedUsers } from "@/lib/store/slices/socialSlice";
+import { withAuth } from "@/components/hoc";
 
-export default function PeoplePage() {
+function PeoplePage() {
   const dispatch = useAppDispatch();
   const { suggestedUsers, loading } = useAppSelector((state) => state.social);
   const [searchQuery, setSearchQuery] = useState("");
@@ -77,3 +78,5 @@ export default function PeoplePage() {
     </>
   );
 }
+
+export default withAuth(PeoplePage);

@@ -1,7 +1,7 @@
-"use client"
-import Logo from "./logo"
-import NavigationMenu from "./navigation-menu"
-import ActionMenu from "./action-menu"
+"use client";
+import Logo from "./logo";
+import NavigationMenu from "./navigation-menu";
+import ActionMenu from "./action-menu";
 
 export function Header() {
   return (
@@ -10,16 +10,12 @@ export function Header() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Logo />
-
           {/* Navigation */}
           <NavigationMenu />
-
           {/* Actions */}
-          <div className="flex items-center space-x-2">
-            <ActionMenu />
-          </div>
+          <ActionMenu />
         </div>
       </div>
     </header>
-  )
+  );
 }

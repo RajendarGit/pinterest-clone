@@ -8,7 +8,12 @@ import { Input } from "@/components/ui/input"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { useAppSelector, useAppDispatch } from "@/lib/hooks/redux"
 import { removePin, addPin } from "@/lib/store/slices/pinsSlice"
-import type { Pin } from "@/lib/store/slices/pinsSlice"
+import type { Pin as BasePin } from "@/lib/store/slices/pinsSlice"
+
+// Extend the Pin type to include updated_at
+export interface Pin extends BasePin {
+  updated_at?: string;
+}
 
 interface MovePinModalProps {
   pin: Pin

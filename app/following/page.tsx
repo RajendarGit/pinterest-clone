@@ -9,8 +9,9 @@ import {
   fetchActivityFeed,
   fetchSuggestedUsers,
 } from "@/lib/store/slices/socialSlice";
+import { withAuth } from "@/components/hoc";
 
-export default function FollowingPage() {
+function FollowingPage() {
   const dispatch = useAppDispatch();
   const { activities, loading } = useAppSelector((state) => state.social);
 
@@ -53,3 +54,5 @@ export default function FollowingPage() {
     </>
   );
 }
+
+export default withAuth(FollowingPage);

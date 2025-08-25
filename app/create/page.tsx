@@ -4,7 +4,6 @@ import type React from "react";
 
 import { useState } from "react";
 import { Upload, LinkIcon } from "lucide-react";
-import { Header } from "@/components/header";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -20,8 +19,9 @@ import {
 import { useAppSelector, useAppDispatch } from "@/lib/hooks/redux";
 import { addPin } from "@/lib/store/slices/pinsSlice";
 import type { Pin } from "@/lib/store/slices/pinsSlice";
+import { withAuth } from "@/components/hoc";
 
-export default function CreatePage() {
+function CreatePage() {
   const dispatch = useAppDispatch();
   const { boards } = useAppSelector((state) => state.boards);
   const [activeTab, setActiveTab] = useState<"upload" | "url">("upload");
@@ -253,3 +253,5 @@ export default function CreatePage() {
     </>
   );
 }
+
+export default withAuth(CreatePage);

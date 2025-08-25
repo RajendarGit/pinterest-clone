@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { Plus } from "lucide-react";
-import { Header } from "@/components/header";
 import { BoardCard } from "@/components/board-card";
 import { CreateBoardModal } from "@/components/create-board-modal";
 import { Button } from "@/components/ui/button";
@@ -10,8 +9,9 @@ import { useAppDispatch, useAppSelector } from "@/lib/hooks/redux";
 import { setBoards } from "@/lib/store/slices/boardsSlice";
 import type { Board } from "@/lib/store/slices/boardsSlice";
 import Loading from "./loading";
+import { withAuth } from "@/components/hoc";
 
-export default function BoardsPage() {
+function BoardsPage() {
   const dispatch = useAppDispatch();
   const { boards, loading } = useAppSelector((state) => state.boards);
   const { user } = useAppSelector((state) => state.auth);
@@ -27,7 +27,7 @@ export default function BoardsPage() {
         is_private: false,
         cover_image_url: "/modern-home-interior.png",
         user_id: "demo-user",
-        created_at: new Date().toISOString(),
+        created_at: "2024-01-01T00:00:00.000Z",
         pin_count: 24,
       },
       {
@@ -37,7 +37,7 @@ export default function BoardsPage() {
         is_private: false,
         cover_image_url: "/delicious-food-recipes.png",
         user_id: "demo-user",
-        created_at: new Date().toISOString(),
+        created_at: "2024-01-01T00:00:00.000Z",
         pin_count: 18,
       },
       {
@@ -47,7 +47,7 @@ export default function BoardsPage() {
         is_private: true,
         cover_image_url: "/diverse-travel-destinations.png",
         user_id: "demo-user",
-        created_at: new Date().toISOString(),
+        created_at: "2024-01-01T00:00:00.000Z",
         pin_count: 42,
       },
       {
@@ -57,7 +57,7 @@ export default function BoardsPage() {
         is_private: false,
         cover_image_url: "/diverse-fashion-outfits.png",
         user_id: "demo-user",
-        created_at: new Date().toISOString(),
+        created_at: "2024-01-01T00:00:00.000Z",
         pin_count: 31,
       },
     ];
@@ -120,3 +120,5 @@ export default function BoardsPage() {
     </>
   );
 }
+
+export default withAuth(BoardsPage);
