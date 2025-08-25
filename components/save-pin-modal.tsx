@@ -10,6 +10,7 @@ import { CreateBoardModal } from "./create-board-modal"
 import { useAppSelector, useAppDispatch } from "@/lib/hooks/redux"
 import { addPin } from "@/lib/store/slices/pinsSlice"
 import type { Pin } from "@/lib/store/slices/pinsSlice"
+import Image from "next/image"
 
 interface SavePinModalProps {
   pin: Pin
@@ -98,17 +99,19 @@ export function SavePinModal({ pin, open, onOpenChange }: SavePinModalProps) {
                   <Button
                     key={board.id}
                     variant="ghost"
-                    className="w-full justify-between p-3 h-auto"
+                    className="w-full justify-between p-3 h-auto rounded-md hover:bg-gray-100"
                     onClick={() => handleSaveToBoard(board.id)}
                     disabled={saving}
                   >
                     <div className="flex items-center space-x-3">
                       <div className="w-12 h-12 bg-muted rounded-lg overflow-hidden">
                         {board.cover_image_url ? (
-                          <img
+                          <Image
                             src={board.cover_image_url || "/placeholder.svg"}
                             alt={board.title}
                             className="w-full h-full object-cover"
+                            width={48}
+                            height={48}
                           />
                         ) : (
                           <div className="w-full h-full bg-primary/20 flex items-center justify-center">

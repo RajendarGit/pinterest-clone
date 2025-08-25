@@ -33,7 +33,7 @@ export function PinCard({ pin }: PinCardProps) {
   return (
     <>
       <Card
-        className="group cursor-pointer card-theme p-0"
+        className="group cursor-pointer card-theme p-0 overflow-hidden rounded-t-xl"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
