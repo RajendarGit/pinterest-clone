@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect } from "react";
-import { Header } from "@/components/header";
 import { ActivityFeed } from "@/components/activity-feed";
 import { SuggestedUsers } from "@/components/suggested-users";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks/redux";
